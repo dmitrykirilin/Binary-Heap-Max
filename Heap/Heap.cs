@@ -13,6 +13,17 @@ namespace Heap
 
         public int Count => items.Count;
 
+        public Heap() { }
+
+        public Heap(List<T> range)
+        {
+
+            foreach (var item in range)
+            {
+                this.Push(item);
+            }
+        }
+
         public T GetMax()
         {
             if (Count > 0)

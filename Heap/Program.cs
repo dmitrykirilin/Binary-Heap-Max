@@ -10,21 +10,20 @@ namespace Heap
     {
         static void Main(string[] args)
         {
-            var heap = new Heap<int>();
+            var rnd = new Random();
 
-            heap.Push(20);
-            heap.Push(2);
-            heap.Push(23);
-            heap.Push(5);
-            heap.Push(7);
-            heap.Push(14);
-            heap.Push(8);
-            heap.Push(18);
-            heap.Push(1);
+            var list = new List<int>();
+
+            for (int i = 0; i < 100; i++)
+            {
+                list.Add(rnd.Next(1, 100));
+            }
+
+            var heap = new Heap<int>(list);
 
             foreach (var item in heap.items)
             {
-                Console.WriteLine(item);
+                Console.Write(item + ", ");
             }
 
             Console.WriteLine(heap.Peek());
@@ -32,7 +31,7 @@ namespace Heap
             heap.Pop();
             foreach (var item in heap.items)
             {
-                Console.WriteLine(item);
+                Console.Write(item + ", ");
             }
 
             Console.ReadLine();
